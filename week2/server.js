@@ -52,6 +52,19 @@ app.get('/add', (req, res) => {
 });
 
 
+app.get('/div', (req, res) => {
+  const a = parseFloat(req.query.a);
+  const b = parseFloat(req.query.b);
+
+  if (isNaN(a) || isNaN(b)) {
+    return res.send("Error: Please provide valid numbers using query parameters 'a' and 'b'.");
+  }
+
+  const div = a / b;
+  res.send(`The division of ${a} and ${b} is: ${div}`);
+});
+
+
 app.listen(PORT, () => {
 console.log(`Server is running on http://localhost:${PORT}`);
 });

@@ -3,38 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Random Quote Display</title>
+<style>
+  body { font-family: sans-serif; max-width: 500px; margin: 2rem auto; padding: 0 1rem; }
+  section { margin-bottom: 2rem; }
+  label { display: inline-block; width: 140px; margin-bottom: 8px; }
+  input { margin-bottom: 8px; }
+  h1 { font-size: 1.2rem; }
+</style>
 </head>
 <body>
-<h1>Random Quote API Demo</h1>
+
+<section>
+<h1>Random Quote</h1>
 <p>Click the button below to get a random quote from the server:</p>
 <button id="fetchQuoteBtn">Get Quote</button>
 <p id="quoteDisplay"></p>
+</section>
 
-
-
-
-  <h1>Square Calculator</h1>
+<section>
+  <h1>Square Calculator (²)</h1>
   <form action="/square" method="GET">
     <label for="num">Enter a number:</label>
     <input type="text" id="num" name="num" required>
     <button type="submit">Calculate Square</button>
   </form>
+</section>
 
-
-
-  <h1>Sum Calculator</h1>
+<section>
+  <h1>Sum Calculator (+)</h1>
   <form action="/add" method="GET">
     <label for="a">Enter first number:</label>
-    <input type="text" id="a" name="a" required>
-    <br><br>
+    <input type="text" id="a" name="a" required><br>
     <label for="b">Enter second number:</label>
-    <input type="text" id="b" name="b" required>
-    <br><br>
+    <input type="text" id="b" name="b" required><br>
     <button type="submit">Calculate Sum</button>
   </form>
+</section>
 
+<section>
+  <h1>Division Calculator (/)</h1>
+  <form action="/div" method="GET">
+    <label for="a">Enter first number:</label>
+    <input type="text" id="a" name="a" required><br>
+    <label for="b">Enter second number:</label>
+    <input type="text" id="b" name="b" required><br>
+    <button type="submit">Calculate Div</button>
+  </form>
+</section>
 
-  
 <script>
 document.getElementById('fetchQuoteBtn').addEventListener('click', function() {
   fetch('/api/quote')
